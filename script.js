@@ -28,7 +28,7 @@ async function getQuote() {
         const response = await fetch(proxyUrl + apiUrl)
         const data = await response.json()
 
-        // Showing The Author Text & Icon, If Previouly Made Hidden
+        // Showing The Author Text & Icon, If Were Made Hidden Due To Any Error
         authorText.classList.remove('hide')
         icon.classList.remove('hide')
 
@@ -49,9 +49,9 @@ async function getQuote() {
         //Stop Loader, Show Code
         removeLoadingSpinner()
     } catch (err) {
-        quoteText.innerText = 'Whoops, Something Went Wrong... Please Try Again'
 
-        //Hiding The Author Name & The Icon
+        //Hiding The Author Name & The Icon & Showing A Error Message
+        quoteText.innerText = 'Whoops, Something Went Wrong... Please Try Again'
         authorText.classList.add('hide')
         icon.classList.add('hide')
         removeLoadingSpinner()
